@@ -1,3 +1,3 @@
 # README-Generator
 
-![MIT]
+![${license}](/github/license/:user/:repo)
