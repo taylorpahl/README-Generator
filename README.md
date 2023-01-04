@@ -1,3 +1,3 @@
 # README-Generator
 
-![${license}](/github/license/:user/:repo)
+![MIT](https://img.shields.io/github/license/taylorpahl/README-Generator)
