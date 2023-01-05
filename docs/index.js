@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateREADME = ({ title, description, installation, usage, credits, tests, license, github, email }) =>
-`# ${title}
+const generateREADME = ({ title, description, installation, usage, credits, tests, license, github, repo, email }) =>
+`![${license}](https://img.shields.io/github/license/${github}/${repo})
+
+# ${title}
 
 ## Description
 
@@ -31,10 +33,6 @@ ${credits}
 ## Tests
 
 ${tests}
-
-## License
-
-${license}
 
 ## Questions
 
@@ -76,14 +74,20 @@ inquirer
       message: 'Please provide an explanation of how to run tests for your project.',
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: 'Please choose a license.',
+        choices: ['MIT', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
     },
     {
         type: 'input',
         name: 'github',
         message: 'Please enter your Github username.',
+    },
+    {
+        type: 'input',
+        name: 'repo',
+        message: 'Please enter your the name of your repository.',
     },
     {
         type: 'input',
